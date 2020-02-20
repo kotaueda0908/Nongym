@@ -1,0 +1,19 @@
+nav
+  .nav-wrapper.grey.darken-3.row
+    a.brand-logo.col.s2 href="/"  NonGym
+    ul#nav-mobile.right.hide-on-med-and-down
+      li
+        a href="/articles/new"  新規登録
+      li
+        a href="/"  記事一覧
+
+div.row.col.s12
+= form_with model: @article, local: true do |f|
+  div
+    = f.label :title
+  = f.text_field :title, id: 'article_title'
+  div
+    = f.label :content
+  = f.text_area :content, id: 'article_content'
+  div.btn.waves-effect.waves-light.yellow.darken-1
+    = f.submit nil
